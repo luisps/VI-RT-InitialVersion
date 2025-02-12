@@ -41,52 +41,8 @@ public:
      *
      */
     bool intersect (Ray r) {
-        float t0 = 0.f, t1 = MAXFLOAT;
-        float invRayDir, tNear, tFar;
-        // XX slabs
-        invRayDir = 1 / r.dir.X;
-        tNear = (min.X - r.o.X) * invRayDir;
-        tFar = (max.X - r.o.X) * invRayDir;
-        if (tNear > tFar) {
-            float aux = tNear;
-            tNear = tFar;
-            tFar = aux;
-        }
-        // pbrt 3rd edition, pag 221 (pbrt.org)
-        tFar *= 1 + 2 * gamma(3);
-        t0 = tNear > t0 ? tNear : t0;
-        t1 = tFar < t1 ? tFar : t1;
-        if (t0 > t1) return false;
-        // YY slabs
-        invRayDir = 1 / r.dir.Y;
-        tNear = (min.Y - r.o.Y) * invRayDir;
-        tFar = (max.Y - r.o.Y) * invRayDir;
-        if (tNear > tFar) {
-            float aux = tNear;
-            tNear = tFar;
-            tFar = aux;
-        }
-        // pbrt 3rd edition, pag 221 (pbrt.org)
-        tFar *= 1 + 2 * gamma(3);
-        t0 = tNear > t0 ? tNear : t0;
-        t1 = tFar < t1 ? tFar : t1;
-        if (t0 > t1) return false;
-        // ZZ slabs
-        invRayDir = 1 / r.dir.Z;
-        tNear = (min.Z - r.o.Z) * invRayDir;
-        tFar = (max.Z - r.o.Z) * invRayDir;
-        if (tNear > tFar) {
-            float aux = tNear;
-            tNear = tFar;
-            tFar = aux;
-        }
-        // pbrt 3rd edition, pag 221 (pbrt.org)
-        tFar *= 1 + 2 * gamma(3);
-        t0 = tNear > t0 ? tNear : t0;
-        t1 = tFar < t1 ? tFar : t1;
-        if (t0 > t1) return false;
-
-        return true; }
+        return true;
+    }
 } BB;
 
 #endif /* AABB_hpp */

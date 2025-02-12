@@ -20,14 +20,8 @@ bool Triangle::intersect(Ray r, Intersection *isect) {
     // Check whether the ray is parallel to the plan containing the triangle
     // The dot ptoduct between the ray direction and the triangle normal will be 0
     
-    // BE CAREFUL: removed the restriction that the ray is on the same side as the normal
-    // For a single sided trianguylar light source that is very important
-    // in that case substitute as follows:
-    //const float par = normal.dot(r.dir);
-    //if (par > -EPSILON) {
-
-    const float par = std::abs(normal.dot(r.dir));
-    if (par < EPSILON) {
+    const float par = normal.dot(r.dir);
+    if ((BackFaceCulling && par > -EPSILON) || (!BackFaceCulling && std::abs(par) < EPSILON)) {
         return false;    // This ray is parallel to this triangle.
     }
 
