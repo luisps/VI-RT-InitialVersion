@@ -33,8 +33,7 @@ bool ImagePPM::Save (std::string filename) {
     ToneMap();
     std::ofstream ofs;
     try {
-        //ofs.open(filename, std::ios::binary);  //need to spec. binary mode for Windows users
-        ofs.open(filename);  //need to spec. binary mode for Windows users
+        ofs.open(filename, std::ios::binary);  //need to spec. binary mode for Windows users
         if (ofs.fail()) throw("Can't open output file");
         ofs << "P6\n" << W << " " << H << "\n255\n";
         unsigned char r, g, b;

@@ -10,6 +10,7 @@
 
 #include "vector.hpp"
 #include "ray.hpp"
+#include <limits>
 
 // pbrt 3rd edition, pag 214 (pbrt.org)
 static constexpr float MachineEpsilon =

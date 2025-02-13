@@ -10,6 +10,7 @@
 
 #include "RGB.hpp"
 #include <string>
+#include <cstring>
 
 class Image {
 protected:
