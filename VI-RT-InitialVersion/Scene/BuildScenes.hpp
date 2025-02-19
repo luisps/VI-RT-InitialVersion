@@ -10,9 +10,8 @@
 
 #include "scene.hpp"
 #include "AmbientLight.hpp"
-#include "PointLight.hpp"
-#include "AreaLight.hpp"
 #include "Sphere.hpp"
+#include "triangle.hpp"
 #include "Phong.hpp"
 
  void SpheresScene (Scene& scene, int const N_spheres);

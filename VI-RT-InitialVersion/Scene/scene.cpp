@@ -8,7 +8,6 @@
 #include "scene.hpp"
 
 #include "primitive.hpp"
-#include "mesh.hpp"
 #include "Phong.hpp"
 
 #include <iostream>

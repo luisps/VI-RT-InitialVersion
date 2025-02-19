@@ -13,12 +13,7 @@
 #include "ImagePPM.hpp"
 #include "DummyShader.hpp"
 #include "AmbientShader.hpp"
-#include "WhittedShader.hpp"
-#include "DistributedShader.hpp"
-#include "PathTracerShader.hpp"
 #include "AmbientLight.hpp"
-#include "PointLight.hpp"
-#include "AreaLight.hpp"
 #include "Sphere.hpp"
 #include "BuildScenes.hpp"
 #include <time.h>
